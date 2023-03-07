@@ -6,6 +6,7 @@ import com.example.book_my_movie.Entity.TheaterSeatEntity;
 import com.example.book_my_movie.EntryDTO.TheaterEntryDTO;
 import com.example.book_my_movie.Enums.SeatType;
 import com.example.book_my_movie.Repository.TheaterRepository;
+import com.example.book_my_movie.Repository.TheaterSeatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class TheaterService {
     TheaterRepository theaterRepository;
 
     @Autowired
-    TheaterSeatEntity theaterSeatEntity;
+    TheaterSeatRepository theaterSeatRepository;
 
     public String addTheater(TheaterEntryDTO theaterEntryDTO) throws Exception{
 
@@ -52,7 +53,7 @@ public class TheaterService {
                     .seatNo(count+"REG")
                     .theaterEntity(theaterEntity).build();
 
-            theaterSeatEntityList.add(theaterSeatEntity);
+            theaterSeatEntityList.add(theaterSeatEntity1);
         }
 
         for(int count = 1; count <= numOfReclinerSeats; count++){
@@ -61,7 +62,7 @@ public class TheaterService {
                     .seatNo(count+"REC")
                     .theaterEntity(theaterEntity).build();
 
-            theaterSeatEntityList.add(theaterSeatEntity);
+            theaterSeatEntityList.add(theaterSeatEntity1);
         }
 
         for(int count = 1; count <= numOfSofaSeats; count++){
@@ -70,7 +71,7 @@ public class TheaterService {
                     .seatNo(count+"SOFA")
                     .theaterEntity(theaterEntity).build();
 
-            theaterSeatEntityList.add(theaterSeatEntity);
+            theaterSeatEntityList.add(theaterSeatEntity1);
         }
 
         for(int count = 1; count <= numOfVipSeats; count++){
@@ -79,7 +80,7 @@ public class TheaterService {
                     .seatNo(count+"VIP")
                     .theaterEntity(theaterEntity).build();
 
-            theaterSeatEntityList.add(theaterSeatEntity);
+            theaterSeatEntityList.add(theaterSeatEntity1);
         }
 
         return theaterSeatEntityList;
