@@ -27,6 +27,6 @@ public class UserEntity {
     private String address;
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
-    private List<TicketEntity> ticketEntityList = new ArrayList<>();
+    private List<TicketEntity> bookedTicketList = new ArrayList<>();
 
 }

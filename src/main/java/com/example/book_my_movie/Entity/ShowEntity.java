@@ -41,12 +41,12 @@ public class ShowEntity {
 
     @ManyToOne
     @JoinColumn
-    private MovieEntity theaterEntity;
+    private TheaterEntity theaterEntity;
 
     @OneToMany(mappedBy = "showEntity", cascade = CascadeType.ALL)
-    private List<ShowSeatEntity> showSeatEntityList = new ArrayList<>();
+    private List<ShowSeatEntity> listOfShowSeats = new ArrayList<>();
 
     @OneToMany(mappedBy = "showEntity", cascade = CascadeType.ALL)
-    private List<TicketEntity> ticketEntityList = new ArrayList<>();
+    private List<TicketEntity> listOfBookedTickets = new ArrayList<>();
 
 }
