@@ -17,7 +17,7 @@ public class MovieController {
     @Autowired
     MovieService movieService;
 
-    @PostMapping("/add")
+    @PostMapping("/addMovie")
     public ResponseEntity<String> addMovie (@RequestBody MovieEntryDTO movieEntryDTO){
 
         try {
@@ -25,7 +25,7 @@ public class MovieController {
             return new ResponseEntity<>(result, HttpStatus.CREATED);
         }catch (Exception e){
             String response = "Movie not added.";
-            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(response + "SEE THIS", HttpStatus.BAD_REQUEST);
         }
 
     }

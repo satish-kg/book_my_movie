@@ -15,7 +15,7 @@ public class TicketController {
     @Autowired
     TicketService ticketService;
 
-    @PostMapping("/book")
+    @PostMapping("/bookTicket")
     public String bookTicket(@RequestBody TickeEntryDTO tickeEntryDTO){
 
         try{
